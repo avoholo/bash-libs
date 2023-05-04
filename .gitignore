@@ -1,0 +1,2 @@
+# Exclude Env Files
+check_open_ports/*.env
