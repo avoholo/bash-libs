@@ -9,11 +9,7 @@ do
   for j in "${PORTS[@]}"
   do
     echo "Trying $i:$j..."
-    if  nc -z $i $j | grep -q "succeeded"
-    then
-      echo "    IP ADDRESS $cnt - $i:$j OPEN"
-      continue
-    else
+    if ! nc -z $i $j; then
       echo "    IP ADDRESS $cnt - $i:$j CLOSED"
     fi
     (( cnt++ ))
